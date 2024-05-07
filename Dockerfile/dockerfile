@@ -1,0 +1,6 @@
+FROM adoptopenjdk/openjdk21:alpine
+VOLUME /tmp
+EXPOSE 8054
+ARG JAR_FILE=target/warehouse.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/warehouse.jar"]
